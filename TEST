@@ -1,0 +1,25 @@
+#get the number of items
+num_item = int(input('Enter the number of items: '))
+
+#get the price of the per item
+item_price = float(input('Enter the price of per item: '))
+
+#calculate the total price
+total = num_item * item_price
+
+#if they get discount
+if  5 < num_item < 10:
+    discount = total * 0.05 
+elif 10 < num_item < 15:
+    discount = total * 0.1
+elif num_item > 15:
+    discount = total *0.15
+else: #no discount
+    discount = 0
+
+#calculate the price of after discount
+afterDiscount = total - discount
+
+#display the total of after discount
+print('Your total is $', afterDiscount , sep='')    
+    
