@@ -1,0 +1,21 @@
+total = 0
+
+for name in ["George", "Susan", "Simmon"]:
+    
+    print("Enter info for", name)
+
+    #get rate and hours worked
+    rate = float(input("Enter pay rate: "))
+    hours = float(input("Enter hour worked: "))
+    
+    #calculate the gross
+    gross = rate * hours
+    
+    #adding to the running total
+    total = total + gross
+    
+    
+    #display gross
+    print("Gross pay $", round(gross, 2), sep="")
+    
+print("Total of everyone's gross pay $", total, sep="")
