@@ -1,0 +1,20 @@
+keep_going = "y"
+while keep_going == "y":
+    
+    name = input("Enter employee name: ")
+    hours = float(input("Enter hour worked: "))
+    while hours < 0:
+        
+        print("INVALID entry!!!")
+        print("Employee can't work hours that are less than 0")
+        
+        hours = float(input("Enter hour worked again (positivenumber): "))
+        
+    # calculate gross pay
+    rate = float(input("Enter pay rate: "))
+    gross = rate * hours
+    
+    # display gross
+    print("Gross pay $", gross, sep="")
+    
+    keep_going = input("Do you want to calc grod pay for another employee? (y for yes): ")
