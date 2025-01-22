@@ -1,0 +1,26 @@
+# Quantity Discounts
+# January 22, 2025
+# CSC121 m1Lab1– Review
+# Rina Moody
+
+# prompt for number of items
+num_item = int(input("Please enter number of items: "))
+
+# determine the cost per item
+if 1 <= num_item <= 19:
+    per_cost = 4.75
+elif 20 <= num_item <= 49:
+    per_cost = 4.50
+elif 50 <= num_item <= 99:
+    per_cost = 4.25
+else:
+    per_cost = 4.00
+
+# calculatet tol order cost
+total = num_item * per_cost 
+
+# desplay the cost per item and total order cost
+
+print("Cost per item is $", per_cost, sep="")
+print("Total order cost is $", total, sep="")
+
