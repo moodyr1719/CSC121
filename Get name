@@ -1,0 +1,35 @@
+# -*- coding: utf-8 -*-
+"""
+Spyder Editor
+
+This is a temporary script file.
+"""
+
+# get name and say hi
+
+name = input("Enter your name: ")
+print("Hello", name)
+print()
+
+score = float(input("\nEnter score or -1 to terminate: "))
+
+while score != -1:    
+   
+    
+    # check if score valid
+    while score < 0 or score > 100:
+        
+        print("INVALID score!! Enter a valid score (0-100) ")
+        socre = float(input("Enter the score again: "))
+        # determine letter grade
+        
+    if score >= 90:
+        print("A")
+    elif score >= 80:
+        print("B")
+    elif score >= 70:
+        print("C")
+    else:
+        print("F")
+        
+    score = float(input("\nEnter score or -1 to terminate: "))
