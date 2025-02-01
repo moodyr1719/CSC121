@@ -1,0 +1,22 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Feb  1 16:04:25 2025
+
+@author: mdyri
+"""
+
+# prompt for the initial investment
+invest = float(input('Please enter investment amount: '))
+
+# determine the interest rate, depending on the size of the investment
+if invest >= 1000:
+    interestRate = 3.25
+else:
+    interestRate = 3.0
+
+# calculte the ending balance
+endBalance = invest * (1 + interestRate/100)
+
+# display the result
+print('Interest rate:', interestRate,'%')
+print('Ending balance: $', endBalance, sep='')
