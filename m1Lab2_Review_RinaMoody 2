@@ -1,0 +1,48 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Feb  1 21:23:53 2025
+
+@author: mdyri
+"""
+
+more_route = 'y'
+numRoute = 0
+fastestTime = 9999
+fastestNumber = 0
+
+while more_route == 'y':
+    
+    numRoute += 1
+    
+    # ask user for distance
+    print()
+    distance = float(input(f'Enter route {numRoute} distance (miles): '))
+    
+    # display invalid if user inputs of 0 or negative values
+    if distance <= 0:
+        
+        print('INVALID entry!! You cannot enter 0 or negative values')
+        distance = float(input(f'Enter route {numRoute} distance (miles) again: '))
+    # ask user for speed
+    speed = float(input(f'Enter route {numRoute} speed (miles/hour): '))
+    
+    # display invalid if user inputs of 0 or negative values
+    if speed <= 0:
+        print('INVALID entry!! You cannot enter 0 or negative values')
+        speed = float(input(f'Enter route {numRoute} speed (miles/hour) again: '))
+        
+    
+    # ask user if they want to enter more route
+    more_route = input('More routes? (y/n): ')
+    
+    # calculate the fastest time and route number
+    time = (distance / speed) * 60
+    
+    if fastestTime > time:
+        fastestNumber = numRoute
+        fastestTime = time
+        
+# display the result
+print()
+print(f'Route {numRoute} is fastest; {fastestTime:.0f} minutes')
+    
