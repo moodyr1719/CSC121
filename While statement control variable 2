@@ -1,0 +1,22 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Feb  1 20:06:10 2025
+
+@author: mdyri
+"""
+
+# using while repetition and a bool control variable,
+# generate a table of weights and BMIs
+
+height = float(input('Enter height (inches): '))
+anotherWeight = True # this is the control variable, for looping
+
+while anotherWeight:
+    
+    weight = float(input('\nEnter weight (pounds): '))
+    
+    bmi = weight / height ** 2 * 703
+    print('BMI = ', round(bmi, 1))
+    
+    reply = input('Enter another weight (y/n)?')
+    anotherWeight = (reply == 'y')
