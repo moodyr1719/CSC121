@@ -1,0 +1,25 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Feb  1 20:20:17 2025
+
+@author: mdyri
+"""
+
+# get input height (common for all calculations)
+height = float(input('Enter height (inches): '))
+
+# get initial weight to calculate with
+weight = float(input('Enter weight (pounds): '))
+
+# repeat calculating as long as entered weight is non-zero 
+while True:
+    if weight == 0:
+        break
+    
+    bmi = weight / height ** 2 * 703
+    print('BMI = ', round(bmi, 1))
+    
+    print()
+    weight = float(input('Enter weight goal (or 0 to end): '))
+
+print('Program ends')
