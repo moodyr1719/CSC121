@@ -1,0 +1,23 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Feb  1 19:38:08 2025
+
+@author: mdyri
+"""
+
+# find the maximum of a set of user-entered numbers
+
+# repetition to prompt for values and track largest
+value = float(input('Enter an initial value: ')) # prompt for the first value
+largest = value
+while value != 0:
+    if value > largest: # is latest entry larger than the largest so far?
+        largest = value
+        print('New largest value:', largest)
+    
+    # prompt for subsequent values
+    value = float(input('Enter another value (or 0 to end): '))
+    
+# output result
+print()
+print('Largest value:', largest)
