@@ -1,0 +1,56 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Jan 22 19:31:15 2025
+
+@author: mdyri
+"""
+
+# calculate the fastest route and time
+# January 22, 2025
+# CSC121 m1Lab2-Review
+# Rina Moody
+
+
+route_number = 0
+more_route = "y"
+fastestTime = 9999
+fastestNumber = 0
+while more_route == "y":
+    
+    route_number = route_number + 1
+   
+    # ask user for distance
+    distance = float(input(f'\nEnter route {route_number} distance (miles): '))
+    
+    # display INVALID if user inputs of 0 or nugative values
+    while distance <= 0:
+        
+        print("INVALID entry!!!")
+        print("You can't enter 0 or negative values")
+        distance = float(input("Enter route distance (miles) again: "))
+        
+    # ask user for speed
+    speed = float(input(f'Enter route {route_number} speed (miles/hour): ')) 
+    
+    # display INVALID if user inputs of 0 or nugative values
+    while speed <= 0:
+        
+        print("INVALID entry!!!")
+        print("You can't enter 0 or negative values")
+        speed = float(input("Enter route distance (miles) again: "))
+    
+    # ask user if they want to input more route
+    more_route = input("More routes (y/n)?: ")  
+    
+    
+    # calculate the fastest time and route 
+    time = (distance / speed) * 60
+    
+    if fastestTime > time:
+        fastestNumber = route_number
+        fastestTime = time 
+    
+# display the result
+print(f'\nRoute {fastestNumber} is fastest; {fastestTime:.0f} minutes')
+
+        
