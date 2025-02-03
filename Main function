@@ -1,0 +1,36 @@
+# -*- coding: utf-8 -*-
+"""
+Spyder Editor
+
+This is a temporary script file.
+"""
+
+def main():
+    first, last = welcome()
+    
+    greet(first, last)
+    
+    num1 = int(input('Enter number: '))
+    num2 = int(input('Enter another number: '))
+    
+    total = num1 + num2
+    
+    print(total)
+    
+def greet(firstName, lastName):
+    
+    print('Hello', firstName, lastName)
+    
+def welcome():
+    
+    '''
+    function doesn't require arguments,
+    asks user to enter their name and says hello to them
+    '''
+    
+    first = input('Enter your first name: ')
+    last = input('Enter your last name')
+    
+    return first, last
+
+main()
