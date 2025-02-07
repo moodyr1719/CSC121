@@ -1,0 +1,24 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Feb  7 17:43:13 2025
+
+@author: mdyri
+"""
+
+
+def calcTotal(numberItems, unitCost, taxRate):
+    pretaxCost = round(numberItems * unitCost, 2)
+    salesTax = round(pretaxCost * taxRate, 2)
+    return pretaxCost, salesTax
+
+def displaySales(pretax, tax):
+    print('Pre-tax: $', pretax)
+    print('Tax: $', tax)
+    print('Total: $', pretax + tax)
+    
+count = int(input('Enter number of books: '))
+cost = float(input('Enter cost per book ($): '))
+
+pretax, tax = calcTotal(count, cost, .075)
+
+displaySales(pretax, tax)
