@@ -1,0 +1,42 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Feb  7 19:15:16 2025
+
+@author: mdyri
+"""
+
+# Calculates the economic order size
+# Feb 7, 2025
+# CSC121 m2Lab-Function Review
+# Rina Moody
+
+def eoq(demand, reorderCost, holdingCost, minOrder=0):
+    '''
+    
+
+    Parameters
+    ----------
+    demand : TYPE
+        DESCRIPTION.
+    reorderCost : TYPE
+        DESCRIPTION.
+    holdingCost : TYPE
+        DESCRIPTION.
+    minOrder : TYPE, optional
+        DESCRIPTION. The default is 0.
+
+    Returns
+    -------
+    eoqCalc : TYPE
+        DESCRIPTION.
+    orderSize : TYPE
+        DESCRIPTION.
+
+    '''
+    # Calculate the Economic Order Quantity (EOQ)
+    eoqCalc = (2 * demand * reorderCost / holdingCost) ** 0.5
+    
+    # Calculate the order size
+    orderSize = max(eoqCalc, minOrder)
+    
+    return eoqCalc, orderSize
