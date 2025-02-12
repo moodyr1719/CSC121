@@ -1,0 +1,14 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Feb 12 14:26:37 2025
+
+@author: moodyr1719
+"""
+
+grades = [[45,85,60],[100,98,95],[85,91,90]]
+
+for row in grades:
+    
+    for col in row:
+        print(col, end=' ')
+    print()
