@@ -1,0 +1,60 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Feb  7 18:17:56 2025
+
+@author: mdyri
+"""
+
+# Calculates the economic order size
+# Feb 7, 2025
+# CSC121 m2Lab-Function Review
+# Rina Moody
+
+import eoq_calculator
+
+def main():
+    
+    choice = 0
+    
+    while choice != 2:
+        
+        display_menu()
+        
+        # Ask user enter the choice
+        choice = int(input('Enter your choice: '))
+        
+        # If user enter 1
+        if choice == 1 :
+            # Prompt the user for input
+            demand = float(input('\nEnter the projected demand (units/year): '))
+            reorderCost = float(input('Enter the reorder cost ($/order): '))
+            holdingCost = float(input('Enter the holding cost ($/year/unit): '))
+            minOrder = float(input('Enter the minimum order size (units): '))
+            
+            # Calculate result using the eoq function
+            eoqCalc, orderSize = eoq_calculator.eoq(demand, reorderCost, holdingCost, minOrder)
+
+            # Display results
+            print('\n--------- Results ---------')
+            print('Economic Order Quantity:', round(eoqCalc))
+            print('Order Quantity:', round(orderSize, 2))
+        
+        # If user enter 2, exiting the program            
+        elif choice == 2 :
+            print('\nExiting the program. Good bye!')
+            
+       
+        # If user enter is invalid
+        else:
+            print('Invalid choice! Please select again.')
+
+# Display the menu options
+def display_menu():
+    
+    print('\n------ Menu ------')
+    print('1. Calculate EOQ')
+    print('2. Exit')
+ 
+# Start the program
+if __name__ == '__main__':
+    main()   
