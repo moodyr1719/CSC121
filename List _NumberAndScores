@@ -1,0 +1,27 @@
+# -*- coding: utf-8 -*-
+"""
+Spyder Editor
+
+This is a temporary script file.
+"""
+
+# create a program that does the following
+# ask user for number of scores they want to enter
+
+score_num = int(input('Enter number of scores you want to enter: '))
+
+# start a loop, number of times the loop iterates depends on number of
+
+scores = []
+for x in range(score_num):
+    
+    # scores the user want to enter
+    score = float(input('Enter a score: '))
+    scores.append(score)
+    
+print(scores)
+
+
+print(f'Smallest score {min(scores)}')
+print(f'Highest socre {max(scores)}')
+print(f'Average {sum(scores) / len(scores)}')
