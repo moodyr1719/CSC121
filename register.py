@@ -1,0 +1,24 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Feb 20 15:25:44 2025
+
+@author: mdyri
+"""
+
+
+def registered_stu(stu_names, courses):
+    
+    stu_registrations = {}
+    
+    for student in stu_names:
+        for course in courses: 
+            print(f'Is {student} taking {courses}? ' )
+            responce = input('Enter "y" for yes: ')
+            
+            if responce == 'y':
+                stu_registrations.append(course)
+       
+    return stu_registrations
+
+
+            
