@@ -1,0 +1,21 @@
+# -*- coding: utf-8 -*-
+"""
+Spyder Editor
+
+This is a temporary script file.
+"""
+
+names = {123: 'Chris', 456: 'Sussie', 789: 'Jessica', 963: 'Simon'}
+
+grades = {'Chris': {"Math":87, "Sci":99},
+          'Sussie': {"Math":87, "Sci":99},
+          'Jessica': {"Math":87, "Sci":99},
+          'Simon': {"Math":87, "Sci":99}}
+
+
+for name in grades:
+    print(name, end=' ')
+    # ierate over the nester,  get the scores
+    for x in grades[name].values():
+        print(x, end=' ')
+    print()
