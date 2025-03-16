@@ -1,0 +1,58 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Mar 15 21:35:01 2025
+
+@author: mdyri
+"""
+
+# CSC-121 M4Pro
+# Rina Moody
+
+from functions import course_info, code_description, display_students, student_tuition_info, display_info_all_courses, menu
+
+# create a main
+def main():
+    
+    option = 0 
+   
+    while option != 6:
+        # display menu
+        menu()
+        
+        # ask user to choose and option
+        option = int(input('Enter choice: '))
+        print()
+        
+        if option == 1:
+    
+            course_info()
+        
+        elif option == 2:
+            
+            code_description()
+            
+        elif option == 3:
+            
+            display_students()
+        
+              
+        elif option == 4:
+            
+            student_tuition_info()
+            
+        elif option == 5:
+            
+            display_info_all_courses()
+            
+        elif option == 6:
+           print('Program Terminating......')  
+           
+           
+        else:
+            print('Invalid option. Please choose a valid option.')
+                       
+            
+
+
+if __name__ == '__main__':
+    main()
