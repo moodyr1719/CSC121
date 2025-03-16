@@ -1,0 +1,168 @@
+# -*- coding: utf-8 -*-
+"""
+Spyder Editor
+
+This is a temporary script file.
+"""
+
+#create the lists (courses, students) 
+courses = {'MAT-035':{'desc':'Concepts of Algebra', 'tuition':460},
+           'CTI-115':{'desc':'Computer System Foundations', 'tuition':520.98},
+           'BAS-120':{'desc':'Intro to Analytics', 'tuition':500},
+           'CSC-121':{'desc':'Python Programming', 'tuition':783.88}}
+
+students = {'Zakari Watson':['CTI-115', 'CSC-121'],
+            'Jerom Williams':['CTI-115', 'CSC-121', 'MAT-035', 'BAS-120'],
+            'Dominique Ross':['CTI-115', 'CSC-121', 'MAT-035'],
+            'Diana Shepard':['MAT-035', 'CTI-115', 'BAS-120', 'CSC-121'],
+            'Yoko Mayo':['MAT-035'],
+            'Rashad Ahmed':['MAT-035', 'BAS-120'],
+            'Susan JOnes':['BAS-120', 'CSC-121']} 
+
+# create a main
+def main():
+    
+    option = 0 
+   
+    while option != 7:
+        # display menu
+        menu()
+        
+        # ask user to choose and option
+        option = int(input('Enter choice: '))
+        print()
+        
+        if option == 1:
+    
+            course_info()
+        
+        elif option == 2:
+            
+            code_description()
+            
+        elif option == 3:
+            
+            display_students()
+        
+        elif option == 4:
+            
+            student_num()
+        
+        elif option == 5:
+            
+            student_tuition_info()
+            
+        elif option == 6:
+            
+            display_info_all_courses()
+            
+        elif option == 7:
+           print('\nProgram Terminating......')
+           
+           
+           
+        else:
+            print('Invalid option. Please choose a valid option.')
+              
+              
+      
+    
+        
+    
+            
+        
+            
+            
+
+
+# function to display course infomation
+def course_info():
+
+    print(f"{'Code':<10}{'Description':<30}{'Tuition'}")
+    print('-'*60)
+    for course_code, courseInfo in courses.items():
+        print(f"{course_code:<10}{courseInfo['desc']:<30}{courseInfo['tuition']}")
+
+
+
+def code_description():
+    code = input('Enter the course code: ')
+    if code in courses:
+        course = courses[code]
+        print()
+        print(f"Course Code: {code}")
+        print(f"Course Name: {course['desc']}")
+        print(f"Tuition: ${course['tuition']:.2f}")
+    else:
+        print('Course code is NOT found.')
+        
+
+def display_students():
+    for i, student in enumerate(students):
+        print(f'{i + 1}) {student}')
+        
+
+def student_num():
+    stu_num = int(input('Enter student number: '))
+    if stu_num in students:
+        stu_courses = students[stu_num]
+        total_tuition = sum(courses[course]['tuition'] for course in stu_courses)
+        
+        print(f"Student Name: {stu_num}")
+        print(f"Courses Enrolled: {stu_courses}")
+        print(f"Total Tuition: ${total_tuition:,.2f}")
+    else:
+        print("Student is NOT found")
+
+def student_tuition_info():
+    print(f"{'Stu Name':<30}{'# of Courses':<20}{'Tuition'}")
+    print("------------------------------------------------------------")
+    overall_tuition = 0
+    for stu_name, stu_courses in students.items():
+        total_tuition = sum(courses[course]["tuition"] for course in stu_courses)
+        print(f'{stu_name:<30} {len(stu_courses):<18} ${total_tuition:,.2f}')
+        overall_tuition += total_tuition
+    print("------------------------------------------------------------")
+    print(f"{'Overall Total:':<49} ${overall_tuition:,.2f}")
+        
+    
+def display_info_all_courses():
+    course_stats = {}
+    
+    for course_code in courses:
+        stu_count = 0
+        total_tuition = 0
+        
+        for stu_courses in students.values():
+            if course_code in stu_courses:
+                stu_count = stu_count + 1
+                total_tuition = total_tuition + courses[course_code]['tuition']
+        
+        course_stats[course_code] = {'stu_count': stu_count, 'total_tuition': total_tuition}
+        
+    print(f"\n{'Course Code':<15}{'# of Stu':<12}{'Tuition Generated'}")
+    print('-' * 50)
+
+    for course_code, stats in course_stats.items():
+        print(f"{course_code:<15}{stats['stu_count']:<12}{stats['total_tuition']:,.2f}")
+
+        
+        
+        
+        
+    
+    
+# function to display the list of menu  
+def menu():
+    
+    print('\n---------------MENU---------------')
+    print('1) Display Course Informaiton')
+    print('2) Lookup Course')
+    print('3) Display Courses and Tuition for Specific Students')
+    print('4) Display Tuition for All Students')
+    print('5) Display # of Students and Tuition for All Courses')
+    print('6) Exit')
+    print('-'*34)
+    
+if __name__ == '__main__':
+    main()
