@@ -1,0 +1,30 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Mar 17 13:33:04 2025
+
+@author: moodyr1719
+"""
+
+name = 'jon'
+salary = 3000
+
+# step1, crate a variable that references a file object
+
+# here we tell the program name of the file and how we want to work with it
+# mode defines how we are going to work with the file (w = write, r = read, a = append)
+
+file = open('practice.txt', 'w')
+
+# step2, process the info. if writing, use the writing mehods
+# if one line, call the write() method
+# if multiple lines (writelines)
+
+# CAN ONLY WRITE STRING, noooo numbers
+
+file.write(name + '\n') # can only pass ONE argument, MUST be a String
+# file.write(str(salary))
+file.write(f'{salary}')
+
+#step3, close the file
+
+file.close()
