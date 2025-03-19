@@ -1,0 +1,16 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Mar 19 13:24:54 2025
+
+@author: moodyr1719
+"""
+
+with open('stuInfo.txt') as inFile:
+    outFile = open('report.txt', 'w')
+    print(f'{"Last":<15}{"First":<15}{"stuID":<15}{"Email"}'+'\n', file = outFile)
+    
+    for line in inFile:
+        
+        line_list = line.split()
+        email = line_list[0] + '@gmail.com'
+        print(f'{line_list[0]:<15}{line_list[1]:<15}{line_list[3]:<15}{line_list[4]}'+'\n', file = outFile)
