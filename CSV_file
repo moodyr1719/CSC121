@@ -1,0 +1,29 @@
+# -*- coding: utf-8 -*-
+"""
+Spyder Editor
+
+This is a temporary script file.
+"""
+
+import csv
+
+months = ['Jan', 'Feb', 'Mar']
+
+# define file object assign to variable
+with open('sales.csv', 'w') as outFile:
+    
+    #call writer method, because we want to write
+    outFile = csv.writer(outFile)
+    
+    #get sales amoynt for each month
+    # enter sales amount for name of month
+    outFile.writerow(['Month', 'Sales'])
+    for month in months:
+        
+        sales = float(input('Enter sales amount for ' + month + ' $'))
+        
+        # write the month and the amount into the file
+        outFile.writerow([month, '$' + str(sales)])
+        #outFile.writerow([month, f'${sales}])
+        
+        
