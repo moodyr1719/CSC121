@@ -12,7 +12,7 @@ try:
     
     
     # add to file
-    with open('sales.txt', 'a') as file:
+    with open('sales.txt', 'w') as file:
         
         total = num + num2
         file.write(str(num) + '\n')
