@@ -1,0 +1,29 @@
+# -*- coding: utf-8 -*-
+"""
+Spyder Editor
+
+This is a temporary script file.
+"""
+
+try:
+
+    num = int(input('Enter a number: '))
+    num2 = int(input('Enter another number: '))
+    
+    
+    # add to file
+    with open('sales.txt', 'a') as file:
+        
+        total = num + num2
+        file.write(str(num) + '\n')
+        file.write(str(num2) + '\n')
+        file.write(str(total))
+
+except ValueError:
+    print('Enter a whole numbr please')
+    
+except FileNotFoundError:
+    print('file '+'sales.txt not found!!')
+
+except:
+    print('')
