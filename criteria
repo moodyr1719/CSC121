@@ -1,0 +1,52 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Apr  2 14:25:47 2025
+
+@author: moodyr1719
+"""
+
+word = 'Wed01_one '
+
+# min 8 char long
+# no spaces
+# at least 1 digit
+# at least one cpital letter
+# at least one of these symbols _ or - or !
+
+space = ''
+
+works = False
+crit1 = False
+crit2 = False
+crit3 = False
+crit4 = False
+crit5 = False
+
+# check first criteria
+if len(word) >= 8:
+    crit1 = True
+
+for ch in word:
+    
+    # check for space
+    if ch.isspace():
+        space = True
+    if ch.isdigit():
+        crit3 = True
+    if ch.isupper():
+        crit4 = True
+    if ch in ['_', '-', '!']:
+        crit5 = True
+        
+if space == True:
+    crit2 = False
+else:
+    crit2 = True
+    
+
+if crit1 and crit2 and crit3 and crit4 and crit5:
+    
+    works = True
+    
+else:
+    print('Does not meet criteria.')
