@@ -1,0 +1,22 @@
+# -*- coding: utf-8 -*-
+"""
+Spyder Editor
+
+This is a temporary script file.
+"""
+
+# open the file
+
+with open('file.txt','r') as file:
+    
+    # reading the lines and checking for tue
+    for line in file:
+        
+        # look for tue
+        if 'tue' in line:
+            
+            # extract starting from $
+            position = line.find('$')
+            
+            # extract from that position
+            print(line[position:])
