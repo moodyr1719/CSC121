@@ -1,0 +1,39 @@
+# -*- coding: utf-8 -*-
+"""
+Spyder Editor
+
+This is a temporary script file.
+"""
+
+class Client:
+    '''
+    '''
+    def __init__(self, first, last, balance):
+        
+        # define attributes here
+        self.first_name = first
+        self.last_name = last
+        self.balance = balance
+        self.interest_rate = 0.05
+        
+    def __str__(self):
+        
+        return f'First Name: {self.first_name}'+'\n'+\
+            f'Balance: {self.balance}'
+
+        
+clients = int(input('Enter number of client accounts you want to create: '))
+
+# start entern=ing the information
+for client in range(1, clients+1):
+    
+    print('Info for Client number' , client)
+    
+    # get first name,  last name and balane
+    first_name = input('First Name: ')
+    last_name = input('Last Name: ')
+    balance = float(input('Balance: '))
+    
+    cl = Client(first_name, last_name, balance)
+    
+    print(cl)
