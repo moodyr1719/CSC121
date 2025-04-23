@@ -1,0 +1,54 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Apr 23 14:11:11 2025
+
+@author: moodyr1719
+"""
+
+from pet import Pet
+import cvs
+
+import pet_functions as pf
+
+
+def main():
+    
+    # menu driven program
+    choice = 0
+    while choice != 4:
+        
+        pf.menu()
+        print()
+        
+        # ask user for choice
+        choice = int(input('Enter choice: '))
+        print()
+        
+        # evaluate what was enterd
+        if choice == 1:
+            
+            pets = pf.read()
+            
+        elif choice == 2:
+            
+            if len(pets) == 0:
+                print('Read csv content first')
+                
+            else:
+                pets = pf.new_info(pets)
+                
+        elif choice == 3:
+                        
+            pf.write_info(pets)
+            
+        elif choice == 4:
+            
+            print('Program terminating.....')
+            
+        else:
+
+            print('INVALID value enterd!!')        
+            
+        
+        
+main()
